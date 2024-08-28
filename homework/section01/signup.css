@@ -342,14 +342,13 @@ body {
   width: 448px;
   height: 48px;
   margin-top: 20px;
+  cursor: pointer;
   background-color: #491449;
   color: #fff;
-  cursor: pointer;
 }
 
-.on {
-  background-color: #491449;
-  color: #fff;
+.content .joinbtn.off {
+  background-color: #c7c7c7;
 }
 
 .체크및가입박스 {
@@ -498,4 +497,36 @@ body {
 
 #타이머 {
   color: red;
+}
+
+#userEmail {
+  width: 125px;
+}
+
+#emailOption {
+  font-size: 18px;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid #c7c7c7;
+  padding: 10px 0px;
+}
+
+.checkInner {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkInner .checkText {
+  color: red;
+  font-size: 13px;
+}
+
+.checkInner .checkText.success {
+  color: blue;
+}
+
+.listcontent ul {
+  height: 450px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
