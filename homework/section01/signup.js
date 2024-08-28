@@ -108,7 +108,6 @@ function passwordValidChk() {
     passwordCheckText1.classList.add('success');
     return passwordValid = true;
   }
-
 }
 
 // 패스워드 값 동일 여부 체크
@@ -165,7 +164,6 @@ function telValidChk() {
 }
 
 
-
 // 가입하기 버튼 클릭시 입력값 체크 및 가입처리
 function 가입클릭시() {
   // 가입축하 알림창 띄우기
@@ -215,13 +213,12 @@ function 수강생클릭시(index) {
 }
 
 
-
 let intervalBox;
 function 타이머() {
   // 2. 인증번호 누를때 마다 기존 카운트는 초기화
   if (intervalBox) clearInterval(intervalBox);
 
-  let time = 5;
+  let time = 179;
   intervalBox = setInterval(() => {
     const 분 = Math.floor(time / 60);
     let 초 = Math.floor(time % 60);
@@ -236,23 +233,21 @@ function 타이머() {
       const confirmBtn = document.getElementById("sendConfirm");
       confirmBtn.classList.add('off');
       confirmBtn.disabled = true;
+      confirmBtn.innerText = '인증하기'
+      allCheck();
     }
   }, 1000);
 }
 
-function 인증완료() {
+function 인증하기() {
   const confirmBtn = document.getElementById("sendConfirm");
-  if (confirm) {
+  if (confirmBtn.disabled === false) {
     confirmBtn.innerText = '인증완료'
     confirmBtn.classList.add('off');
     confirmBtn.disabled = true;
     document.querySelector("#타이머").innerText = "";
-
-    allCheck() // 모든 항목 체크
-
     clearInterval(intervalBox);
   } else {
-    allCheck() // 모든 항목 체크
     alert('인증번호를 받아주세요.')
   }
 }
@@ -260,8 +255,9 @@ function 인증완료() {
 function 인증번호요청() {
   const 랜덤번호 = Math.floor(Math.random() * 1000000); // 0 ~ 999999
   const 인증번호 = String(랜덤번호).padStart(6, "0"); // 6자리 숫자로된 문자열 만들기
-  document.querySelector("#인증번호").value = 인증번호;
-  const confirmBtn = document.getElementById("sendConfirm");
+  document.querySelector("#인증번호").value = 인증번호; // 인증번호 노출처리
+  const confirmBtn = document.getElementById("sendConfirm"); // 인증완료 버튼
+  // 인증완료 버튼 활성화 및 스타일 변경
   confirmBtn.classList.remove('off');
   confirmBtn.disabled = false;
 }
