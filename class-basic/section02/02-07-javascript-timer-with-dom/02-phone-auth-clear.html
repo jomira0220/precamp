@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>timer</title>
+    <script>
+      let 인터벌상자;
+      function 타이머() {
+        // 2. 인증번호 누를때 마다 기존 카운트는 초기화
+        clearInterval(인터벌상자);
+
+        let time = 60 * 3;
+        인터벌상자 = setInterval(() => {
+          const 분 = Math.floor(time / 60);
+          let 초 = Math.floor(time % 60);
+          if (초 < 10) 초 = `0${초}`;
+          document.querySelector("#타이머").innerText = `${분}:${초}`;
+          time -= 1;
+        }, 1000);
+      }
+
+      function 인증번호요청() {
+        const 랜덤번호 = Math.floor(Math.random() * 1000000); // 0 ~ 999999
+        const 인증번호 = String(랜덤번호).padStart(6, "0"); // 6자리 숫자로된 문자열 만들기
+        document.querySelector("#인증번호").innerText = 인증번호;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="인증번호"></div>
+    <button
+      id="인증요청버튼"
+      onclick="setTimeout(인증번호요청,1000); 타이머();"
+    >
+      인증번호 요청하기
+    </button>
+
+    <div id="타이머"></div>
+  </body>
+</html>

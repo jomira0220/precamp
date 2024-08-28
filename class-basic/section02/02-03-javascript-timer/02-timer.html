@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Timer 실습</title>
+    <script>
+      // let time = 60 * 3;
+      const timer = (time) => {
+        const timer = document.querySelector("h1");
+        setInterval(() => {
+          const 분 = Math.floor(time / 60);
+          const 초 = time % 60;
+          timer.innerHTML = `남은 시간은 ${분}분 ${초}초 입니다.`;
+          time = time - 1;
+
+          if (분 <= 0 && 초 <= 0) {
+            clearInterval();
+            timer.innerHTML = "타이머 종료";
+          }
+        }, 1000);
+      };
+    </script>
+  </head>
+  <body>
+    <h1></h1>
+    <button onclick="timer(180)">타이머시작</button>
+  </body>
+</html>

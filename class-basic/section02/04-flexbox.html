@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>플렉스박스 실습</title>
+    <style>
+      .우리동네 {
+        width: 500px;
+        height: 500px;
+        background-color: aqua;
+        display: flex;
+        /* flex-direction: column; 기준을 세로로 정렬*/
+        justify-content: space-between;
+        /* space-between : 부모를 기준으로 양끝으로 정렬하는 방법 */
+        /* center : 부모를 기준으로 가운데 정렬하는 방법 */
+        /* space-around : 부모를 기준으로 양끝에 공간을 두고 정렬하는 방법 */
+        align-items: flex-end;
+        /* align-items: 부모를 기준(flex-direction) 세로 정렬 */
+      }
+      .철수집 {
+        width: 150px;
+        height: 150px;
+        background-color: yellow;
+      }
+      .영희집 {
+        width: 150px;
+        height: 150px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="우리동네">
+      <div class="철수집">철수집</div>
+      <div class="영희집">영희집</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>카운트 실습</title>
+    <script>
+      function plus() {
+        const countEl = document.getElementById("count");
+        let countNumber = Number(countEl.innerText);
+        countNumber += 1;
+        countEl.innerText = countNumber;
+      }
+
+      function minus() {
+        const countEl = document.getElementById("count");
+        let countNumber = Number(countEl.innerText);
+        if (countNumber <= 0) {
+          return alert("0보다 작을 수 없습니다.");
+        } else {
+          countNumber -= 1;
+        }
+        countEl.innerText = countNumber;
+      }
+    </script>
+  </head>
+  <body>
+    <div>카운트 : <span id="count">0</span></div>
+    <button onclick="plus()">더하기</button>
+    <button onclick="minus()">빼기</button>
+  </body>
+</html>

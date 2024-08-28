@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Document html 문서 조작하기</title>
+    <script>
+      const changeText = (text) => {
+        const 메뉴 = ["떡볶이", "순대", "튀김", "어묵"];
+        const 랜덤메뉴 = 메뉴[Math.floor(Math.random() * 메뉴.length)];
+        document.getElementById("textBox").innerText = 랜덤메뉴;
+      };
+    </script>
+  </head>
+  <body>
+    <div id="textBox">안녕하세요</div>
+    <button onclick="changeText()">텍스트바꾸기</button>
+  </body>
+</html>

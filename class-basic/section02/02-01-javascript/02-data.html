@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>다양한 데이터 저장 실습</title>
+    <script>
+      let 나의이름 = "철수";
+      나의이름 = "영희";
+      console.log(나의이름);
+
+      const 친구이름 = "영수";
+      // 친구이름 = "길동"; // 에러 발생
+      console.log(친구이름);
+
+      const 철수가가진돈 = 1000;
+      const 영희가가진돈 = 5000;
+      const 총금액 = 철수가가진돈 + 영희가가진돈;
+      console.log(총금액);
+
+      const 철수가가진돈2 = "1000";
+      const 영희가가진돈2 = "5000";
+      const 총금액2 = 철수가가진돈2 + 영희가가진돈2;
+      console.log(총금액2);
+
+      const 철수가가진돈3 = "1000";
+      const 영희가가진돈3 = 5000;
+      const 총금액3 = 철수가가진돈3 + 영희가가진돈3;
+      console.log(총금액3);
+
+      // 객체에 저장하기
+      const 학생1 = {
+        이름: "철수",
+        나이: 20,
+        성별: "남자",
+        학교: "한국대학교",
+      };
+
+      const 학생2 = {
+        이름: "영희",
+        나이: 22,
+        성별: "여자",
+        학교: "성실대학교",
+      };
+
+      const 학생3 = {
+        이름: "맹구",
+        나이: 13,
+        성별: "남자",
+        학교: "공룡초등학교",
+      };
+
+      console.log(학생1);
+
+      // 배열에 저장하기
+      const 과일정보 = ["사과", "바나나", "딸기"];
+      const 학생정보 = [학생1, 학생2, 학생3];
+
+      과일정보.push("수박");
+
+      console.log(학생정보);
+      console.log(과일정보);
+      console.log("학생 명수는 " + 학생정보.length + "명 입니다.");
+      console.log("2번째 학생의 이름은 " + 학생정보[2].이름 + "입니다.");
+      console.log("과일 정보 개수는 " + 과일정보.length + "개 입니다.");
+
+      const 마지막칸번호 = 과일정보.length - 1;
+      function 마지막값추출(배열) {
+        return 배열[배열.length - 1];
+      }
+      // console.log("마지막 과일은 " + 과일정보[마지막칸번호] + "입니다.");
+      console.log("마지막 과일은 " + 마지막값추출(과일정보) + "입니다.");
+      console.log(JSON.stringify(마지막값추출(학생정보)));
+    </script>
+  </head>
+  <body></body>
+</html>

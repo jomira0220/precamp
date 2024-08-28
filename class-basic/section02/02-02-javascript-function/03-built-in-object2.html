@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>내장객체실습</title>
+    <script>
+      function 인증번호요청기능() {
+        const 랜덤숫자 = Math.floor(Math.random() * 1000000);
+        console.log(랜덤숫자);
+        // 위 방법은 소수점의 앞에 자리가 0일수가 있음
+        // 5자리일 수 있으므로 아래 방법처럼 문자열로 0이 생략되지 않도록 처리
+
+        const 랜덤숫자문자열 = String(랜덤숫자).padStart(6, "0");
+        console.log(랜덤숫자문자열);
+      }
+      // max,min,floor,random,round,ceil
+    </script>
+  </head>
+  <body>
+    <button onclick="인증번호요청기능()">인증번호 요청</button>
+  </body>
+</html>

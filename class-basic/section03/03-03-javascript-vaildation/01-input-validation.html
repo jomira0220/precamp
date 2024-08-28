@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>인풋 검증 실습</title>
+    <script>
+      function 인풋검증기능() {
+        // console.log("인풋검증기능");
+
+        const 이메일 = document.querySelector("#email").value;
+        const 성별 = document.querySelector("input[name='성별']:checked")
+          ? document.querySelector("input[name='성별']:checked").value
+          : null;
+        const 동의여부 = document.querySelector("#동의여부").checked;
+        console.log(이메일, 성별, 동의여부);
+
+        const 이메일입력확인 = 이메일 !== "";
+        const 성별입력확인 = 성별 !== null;
+
+        console.log(이메일입력확인, 성별입력확인, 동의여부);
+
+        const 가입버튼 = document.querySelector("#가입버튼");
+        if (
+          이메일입력확인 === true &&
+          성별입력확인 === true &&
+          동의여부 === true
+        ) {
+          가입버튼.style.backgroundColor = "blue";
+          가입버튼.style.color = "white";
+          가입버튼.disabled = false;
+        } else {
+          가입버튼.disabled = true;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    이메일: <input type="email" id="email" oninput="인풋검증기능()" /><br />
+    <label
+      ><input
+        type="radio"
+        name="성별"
+        value="여성"
+        oninput="인풋검증기능()"
+      />여성</label
+    >
+    <label
+      ><input
+        type="radio"
+        name="성별"
+        value="남성"
+        oninput="인풋검증기능()"
+      />남성</label
+    ><br />
+    <label
+      ><input
+        id="동의여부"
+        type="checkbox"
+        oninput="인풋검증기능()"
+      />동의합니까?</label
+    ><br />
+    <button id="가입버튼" disabled>회원가입</button>
+  </body>
+</html>

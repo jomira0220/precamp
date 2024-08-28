@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>회원가입</title>
+    <script>
+      const signUpArr = [];
+      function signUp() {
+        const inputEl = document.getElementById("name"); // input 태그 가져오기
+        const inputValue = inputEl.value; // input 태그의 value 값 가져오기
+        signUpArr.push(inputValue); // 가입 배열에 추가
+        console.log(signUpArr);
+
+        const listEl = document.getElementById("signUpNameList");
+        listEl.innerHTML = `<ul></ul>`;
+        signUpArr.map((key, index) => {
+          listEl.querySelector(
+            "ul"
+          ).innerHTML += `<li>가입자명: ${key}, 가입순서: ${index + 1}</li>`;
+        });
+
+        inputEl.value = ""; // input 태그의 value 값 초기화
+      }
+
+      const enterEvent = () => {
+        if (event.keyCode === 13) {
+          signUp();
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div id="signUpNameList"></div>
+    <div id="signUpName"></div>
+    <input
+      id="name"
+      type="text"
+      placeholder="이름을 입력하세요잉"
+      onkeypress="enterEvent()"
+    />
+    <button onclick="signUp()">회원가입</button>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>이메일 쪼개기 실습</title>
+    <script>
+      const email = "jomira0220@gmail.com";
+
+      function emailInfo(email) {
+        const emailSplit = email.split("@");
+        const emailInfo = {
+          emailId: emailSplit[0],
+          emailDomain: emailSplit[1],
+        };
+        return emailInfo;
+      }
+
+      // console.log(emailInfo(email).emailId);
+      const emailId = emailInfo(email).emailId;
+      const emailDomain = emailInfo(email).emailDomain;
+
+      function emailIdSlice(emailId, sliceCount) {
+        console.log(sliceCount);
+        const star = Array.from({ length: sliceCount }, () => "*").join("");
+        return emailId.slice(0, emailId.length - sliceCount) + star;
+      }
+
+      console.log(emailIdSlice(emailId, 4) + "@" + emailDomain);
+    </script>
+  </head>
+  <body></body>
+</html>

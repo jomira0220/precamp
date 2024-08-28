@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>내장객체실습</title>
+    <script>
+      const 수학객체 = {
+        max: function () {
+          console.log("최대값을 구합니다.");
+        },
+        min: function () {},
+        random: function () {
+          return Math.random() + 1;
+        },
+        round: function (반올림할값) {
+          console.log(
+            "반올림할 값은 " +
+              반올림할값 +
+              " 이고 반올림하면 " +
+              Math.round(반올림할값) +
+              " 입니다."
+          );
+        },
+      };
+      수학객체.max();
+      수학객체.round(1.5);
+
+      const 내가만든랜덤숫자 = 수학객체.random();
+      console.log(내가만든랜덤숫자);
+
+      const 랜덤숫자 = Math.random();
+      console.log(랜덤숫자);
+
+      const date = new Date();
+      console.log(date);
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
+      const day = date.getDate();
+      console.log(year, month, day);
+    </script>
+  </head>
+  <body></body>
+</html>
